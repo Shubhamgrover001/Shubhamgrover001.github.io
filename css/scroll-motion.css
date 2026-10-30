@@ -1,0 +1,35 @@
+/* Scroll motion layer: pairs with js/scroll-motion.js. Disabled for reduced-motion users. */
+
+/* top scroll progress bar */
+.sm-progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 9999;
+  background: linear-gradient(90deg, #F96D00, #ffbd39);
+  transform: scaleX(0); transform-origin: 0 50%; pointer-events: none;
+}
+
+/* reveal-on-scroll (only active once JS adds .sm-js to <html>) */
+.sm-js .sm-reveal {
+  opacity: 0;
+  transform: translate3d(var(--sm-x, 0), var(--sm-y, 0), 0) scale(var(--sm-s, 1));
+  transition: opacity .8s cubic-bezier(.22, .8, .3, 1), transform .9s cubic-bezier(.22, .8, .3, 1);
+  transition-delay: var(--sm-d, 0ms);
+  will-change: opacity, transform;
+}
+.sm-js .sm-reveal.sm-in { opacity: 1; transform: none; }
+
+/* hero entrance + idle float on the about photo */
+.sm-js .hero .one-third.img { animation: smHeroIn 1.4s cubic-bezier(.22, .8, .3, 1) both; }
+@keyframes smHeroIn { from { opacity: 0; transform: scale(1.06); } to { opacity: 1; transform: none; } }
+.sm-js .about-img img { animation: smFloat 6s ease-in-out infinite; }
+@keyframes smFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+/* hover lift for cards (applies after the reveal has finished) */
+.sm-reveal.sm-in.proj-card,
+.sm-reveal.sm-in.resume-wrap { transition: transform .35s ease, box-shadow .35s ease, opacity .8s; transition-delay: 0ms; }
+.proj-card:hover { transform: translateY(-8px) !important; box-shadow: 0 14px 34px rgba(249, 109, 0, .25); }
+
+@media (prefers-reduced-motion: reduce) {
+  .sm-progress { display: none; }
+  .sm-js .hero .one-third.img, .sm-js .about-img img { animation: none; }
+  .sm-js .sm-reveal { opacity: 1; transform: none; transition: none; }
+}
