@@ -1,0 +1,69 @@
+/* Animated hero visual (replaces the portrait). Pure CSS, no dependencies. */
+.ha-scene {
+  position: relative; width: 100%; height: 100%;
+  background: radial-gradient(circle at 50% 38%, #2b3a55 0%, #121a2a 55%, #0a0f1a 100%);
+  overflow: hidden; display: flex; align-items: center; justify-content: center;
+}
+.ha-grid {
+  position: absolute; inset: -50%;
+  background-image: linear-gradient(rgba(255,189,57,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,189,57,.08) 1px, transparent 1px);
+  background-size: 48px 48px; transform: perspective(600px) rotateX(60deg) translateY(0);
+  animation: haGrid 8s linear infinite;
+}
+@keyframes haGrid { to { background-position: 0 48px; } }
+
+.ha-orb {
+  position: relative; width: 190px; height: 190px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ffd76a, #F96D00 60%, #7a2d00);
+  box-shadow: 0 0 60px rgba(249,109,0,.55), 0 0 140px rgba(255,189,57,.25);
+  animation: haPulse 4s ease-in-out infinite;
+}
+@keyframes haPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.07); } }
+.ha-ring {
+  position: absolute; left: 50%; top: 50%; border-radius: 50%;
+  border: 1px dashed rgba(255,189,57,.45); transform: translate(-50%,-50%);
+}
+.ha-ring.r1 { width: 320px; height: 320px; animation: haSpin 22s linear infinite; }
+.ha-ring.r2 { width: 440px; height: 440px; border-color: rgba(255,255,255,.18); animation: haSpin 34s linear infinite reverse; }
+@keyframes haSpin { to { transform: translate(-50%,-50%) rotate(360deg); } }
+.ha-ring i {
+  position: absolute; top: -5px; left: 50%; width: 10px; height: 10px; border-radius: 50%;
+  background: #ffbd39; box-shadow: 0 0 12px #ffbd39;
+}
+
+.ha-card {
+  position: absolute; padding: 10px 16px; border-radius: 10px; font: 600 13px/1.2 'Poppins', sans-serif;
+  color: #fff; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(6px); white-space: nowrap; animation: haFloat 6s ease-in-out infinite;
+}
+.ha-card b { color: #ffbd39; }
+.ha-card.c1 { top: 16%; left: 8%;  animation-delay: 0s; }
+.ha-card.c2 { top: 26%; right: 6%; animation-delay: -1.5s; }
+.ha-card.c3 { bottom: 24%; left: 6%; animation-delay: -3s; }
+.ha-card.c4 { bottom: 30%; right: 8%; animation-delay: -4.5s; }
+@keyframes haFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+
+.ha-code {
+  position: absolute; left: 50%; bottom: 18%; transform: translateX(-50%);
+  font: 12px/1.5 ui-monospace, Consolas, monospace; color: #7ee787; opacity: .85; white-space: nowrap;
+}
+.ha-code::after { content: '\258B'; margin-left: 2px; animation: haBlink 1s steps(2) infinite; }
+@keyframes haBlink { 50% { opacity: 0; } }
+
+/* About-section icon visual */
+.about-visual {
+  width: 100%; max-width: 260px; aspect-ratio: 1; margin: 0 10px 1.5rem; border-radius: 12px;
+  background: radial-gradient(circle at 50% 35%, #2b3a55, #0a0f1a); position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.about-visual .ha-orb { width: 90px; height: 90px; }
+.about-visual .ha-ring.r1 { width: 150px; height: 150px; }
+.about-visual .ha-ring.r2 { width: 210px; height: 210px; }
+
+@media (max-width: 767px) {
+  .ha-ring.r2 { width: 320px; height: 320px; }
+  .ha-card { font-size: 11px; padding: 8px 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ha-grid, .ha-orb, .ha-ring, .ha-card, .ha-code::after { animation: none; }
+}
