@@ -199,7 +199,7 @@
 		} , { offset: '95%' } );
 
 	}
-	counter();
+	// counter(); // replaced by js/counter.js (replays on every scroll into view)
 
 
 	var contentWayPoint = function() {
