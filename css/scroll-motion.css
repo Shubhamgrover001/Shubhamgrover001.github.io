@@ -34,3 +34,15 @@
   .sm-js .hero .one-third.img, .sm-js .about-img img { animation: none; }
   .sm-js .sm-reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* Contact boxes: yellow hover */
+.contact-section .contact-info .box { transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; border: 1px solid transparent; border-radius: 6px; }
+.contact-section .contact-info .box:hover { transform: translateY(-8px); border-color: #ffbd39; box-shadow: 0 0 0 1px rgba(255,189,57,.6), 0 14px 38px rgba(255,189,57,.3); }
+.contact-section .contact-info .box .icon { transition: background .3s ease, transform .3s ease; }
+.contact-section .contact-info .box:hover .icon { background: #ffbd39; transform: scale(1.1) rotate(-6deg); }
+.contact-section .contact-info .box:hover .icon span { color: #000; }
+.contact-section .contact-info p a { position: relative; transition: color .25s ease; }
+.contact-section .contact-info p a::after { content: ''; position: absolute; left: 0; right: 0; bottom: -3px; height: 2px; background: #ffbd39; transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
+.contact-section .contact-info p a:hover { color: #ffbd39 !important; }
+.contact-section .contact-info p a:hover::after { transform: scaleX(1); }
+@media (prefers-reduced-motion: reduce) { .contact-section .contact-info .box:hover, .contact-section .contact-info .box:hover .icon { transform: none; } }
