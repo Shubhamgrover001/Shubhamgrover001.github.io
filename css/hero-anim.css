@@ -57,7 +57,7 @@
 /* About-section version */
 .about-visual {
   width: 100%; max-width: 260px; aspect-ratio: 1; margin: 0 10px 1.5rem; border-radius: 12px;
-  background: radial-gradient(circle at 50% 45%, #2b3a55, #0a0f1a); position: relative; overflow: hidden;
+  background: transparent; position: relative; overflow: hidden;
   display: flex; align-items: flex-end; justify-content: center;
 }
 .about-visual .ha-figure { width: 78%; animation: haFloat 5s ease-in-out infinite, haSway 7s ease-in-out infinite; }
