@@ -54,3 +54,13 @@
 .contact-section .contact-info .box p { margin: 0; width: 100%; color: #fff; line-height: 1.5; overflow-wrap: anywhere; }
 .contact-section .contact-info .box p a { font-size: clamp(13px, 1.15vw, 15px); }
 .contact-section .contact-info .box:hover .icon { transform: none; box-shadow: 0 0 22px rgba(255,189,57,.55); }
+
+/* Buttons: lift + yellow glow + shine sweep + press */
+.btn { position: relative; overflow: hidden; transition: transform .3s ease, box-shadow .3s ease, background-color .3s ease, color .3s ease, border-color .3s ease !important; }
+.btn::after { content: ''; position: absolute; top: 0; left: -75%; width: 50%; height: 100%; transform: skewX(-22deg); background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent); pointer-events: none; }
+.btn:hover::after { left: 130%; transition: left .7s ease; }
+.btn:hover { transform: translateY(-4px) scale(1.04); box-shadow: 0 10px 28px rgba(255,189,57,.5); }
+.btn:active { transform: translateY(-1px) scale(.97); box-shadow: 0 4px 12px rgba(255,189,57,.4); }
+.btn:focus-visible { outline: 2px solid #ffbd39; outline-offset: 3px; }
+.btn.btn-outline-white:hover, .btn-white.btn-outline-white:hover { background: #ffbd39 !important; border-color: #ffbd39 !important; color: #000 !important; }
+@media (prefers-reduced-motion: reduce) { .btn:hover, .btn:active { transform: none; } .btn:hover::after { transition: none; } }
