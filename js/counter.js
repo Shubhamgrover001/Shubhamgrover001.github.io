@@ -3,7 +3,7 @@
 (function () {
   var els = document.querySelectorAll('.number[data-number]');
   if (!els.length) return;
-  var DURATION = 1800;
+  var DURATION = 3500;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var fmt = function (n) { return Math.round(n).toLocaleString('en-US'); };
   var ease = function (t) { return 1 - Math.pow(1 - t, 3); };   // easeOutCubic
