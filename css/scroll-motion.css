@@ -64,3 +64,10 @@
 .btn:focus-visible { outline: 2px solid #ffbd39; outline-offset: 3px; }
 .btn.btn-outline-white:hover, .btn-white.btn-outline-white:hover { background: #ffbd39 !important; border-color: #ffbd39 !important; color: #000 !important; }
 @media (prefers-reduced-motion: reduce) { .btn:hover, .btn:active { transform: none; } .btn:hover::after { transition: none; } }
+
+/* Education cards: equal height, aligned content */
+.edu-row > [class*="col-"] { display: flex; margin-bottom: 1.5rem; }
+.edu-row .resume-wrap { flex: 1 1 auto; width: 100%; display: flex; flex-direction: column; justify-content: flex-start; margin: 0 !important; }
+.edu-row .resume-wrap .date { display: block; }
+.edu-row .resume-wrap h2 { min-height: 2.6em; }
+.edu-row .resume-wrap p { margin-top: auto !important; padding-top: 1rem; margin-bottom: 0; }
