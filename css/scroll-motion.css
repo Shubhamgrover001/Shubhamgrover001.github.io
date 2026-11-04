@@ -3,7 +3,7 @@
 /* top scroll progress bar */
 .sm-progress {
   position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 9999;
-  background: linear-gradient(90deg, #F96D00, #ffbd39);
+  background: linear-gradient(90deg, #ffbd39, #ffd76a);
   transform: scaleX(0); transform-origin: 0 50%; pointer-events: none;
 }
 
@@ -26,7 +26,8 @@
 /* hover lift for cards (applies after the reveal has finished) */
 .sm-reveal.sm-in.proj-card,
 .sm-reveal.sm-in.resume-wrap { transition: transform .35s ease, box-shadow .35s ease, opacity .8s; transition-delay: 0ms; }
-.proj-card:hover { transform: translateY(-8px) !important; box-shadow: 0 14px 34px rgba(249, 109, 0, .25); }
+.proj-card { border: 1px solid transparent; }
+.proj-card:hover { transform: translateY(-8px) !important; border-color: #ffbd39; box-shadow: 0 0 0 1px rgba(255, 189, 57, .6), 0 14px 38px rgba(255, 189, 57, .35); }
 
 @media (prefers-reduced-motion: reduce) {
   .sm-progress { display: none; }

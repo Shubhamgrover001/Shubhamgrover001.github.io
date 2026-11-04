@@ -14,8 +14,8 @@
 
 .ha-orb {
   position: relative; width: 190px; height: 190px; border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #ffd76a, #F96D00 60%, #7a2d00);
-  box-shadow: 0 0 60px rgba(249,109,0,.55), 0 0 140px rgba(255,189,57,.25);
+  background: radial-gradient(circle at 35% 30%, #fff0b3, #ffbd39 60%, #8a5a00);
+  box-shadow: 0 0 60px rgba(255,189,57,.55), 0 0 140px rgba(255,189,57,.25);
   animation: haPulse 4s ease-in-out infinite;
 }
 @keyframes haPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.07); } }
