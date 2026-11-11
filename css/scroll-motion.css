@@ -148,3 +148,8 @@ html, body { overflow-x: hidden; max-width: 100%; }
   .about-info { padding: 0 10px; }
   #about-section .about-img { display: block; }
 }
+
+/* Contact: keep the email on one line on wider screens */
+@media (min-width: 768px) {
+  .contact-section .contact-info .box p, .contact-section .contact-info .box p a { overflow-wrap: normal; word-break: normal; white-space: nowrap; font-size: clamp(12px, 1.05vw, 15px); }
+}
