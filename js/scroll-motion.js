@@ -63,3 +63,16 @@
   window.addEventListener('resize', onScroll);
   update();
 })();
+
+/* Project cards: click anywhere (or Enter/Space) opens the project's GitHub repo */
+(function () {
+  document.querySelectorAll('.proj-card[data-repo]').forEach(function (card) {
+    var url = card.getAttribute('data-repo');
+    function open() { window.open(url, '_blank', 'noopener'); }
+    card.addEventListener('click', function (e) { if (e.target.closest('a')) return; open(); });
+    card.addEventListener('keydown', function (e) {
+      if (e.target !== card) return;
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
+  });
+})();
