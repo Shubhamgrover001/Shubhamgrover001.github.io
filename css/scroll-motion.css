@@ -104,3 +104,32 @@ html, body { overflow-x: hidden; max-width: 100%; }
 /* Clickable project cards */
 .proj-card[data-repo] { cursor: pointer; }
 .proj-card[data-repo]:focus-visible { outline: 2px solid #ffbd39; outline-offset: 3px; }
+
+/* ---------- Real-phone polish ---------- */
+@media (max-width: 767.98px) {
+  /* typing line must fit: smaller, wrap, centred */
+  #typing-animation { display: block !important; font-size: 20px !important; line-height: 1.35; white-space: normal !important; text-align: center; overflow: visible !important; animation: none !important; padding: 0 8px; }
+  .owl-carousel.home-slider .slider-item .slider-text h1 { text-align: center; }
+  .owl-carousel.home-slider .slider-item .slider-text .one-forth .text { text-align: center; }
+  /* hero avatar: no filter/rotate/mask (mobile GPUs tear them into hard-edged tiles) */
+  .ha-figure { filter: none !important; animation: haFloat 5s ease-in-out infinite !important; width: 62%; }
+  .ha-figure img { -webkit-mask-image: none; mask-image: none; }
+  .ha-figure::after { content: ''; position: absolute; left: -2%; right: -2%; bottom: -1px; height: 28%; background: linear-gradient(to bottom, rgba(0,0,0,0), #000 92%); pointer-events: none; }
+  .owl-carousel.home-slider .slider-item .slider-text .one-third { height: 380px !important; overflow: hidden; }
+  /* the About photo repeats the hero avatar right above it: hide on phones */
+  .about-visual { display: none !important; }
+  .ftco-about .about-img { display: none; }
+}
+@media (max-width: 991.98px) {
+  /* hero must grow with its content (JS pins it to window height, which cut the avatar off) */
+  #home-section, #home-section .home-slider, #home-section .owl-stage-outer, #home-section .owl-stage, #home-section .owl-item, #home-section .slider-item, #home-section .slider-item > .overlay, #home-section .slider-item .container { height: auto !important; min-height: 0 !important; }
+  #home-section .slider-item { padding-bottom: 28px; }
+  #home-section { height: auto !important; min-height: 0 !important; }
+  #home-section .slider-item .slider-text { height: auto !important; }
+}
+@media (max-width: 767.98px) {
+  .ha-figure { width: 70% !important; }
+  #home-section .slider-item .slider-text .one-third { height: 320px !important; margin-top: 8px; }
+  #home-section .slider-item { padding-bottom: 0; }
+  #about-section { padding-top: 2.5em !important; }
+}
