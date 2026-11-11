@@ -133,3 +133,18 @@ html, body { overflow-x: hidden; max-width: 100%; }
   #home-section .slider-item { padding-bottom: 0; }
   #about-section { padding-top: 2.5em !important; }
 }
+
+/* ---------- Tablet / "desktop site" on phones (768-991px) ---------- */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #home-section .slider-item .slider-text .one-third { height: 440px !important; margin-top: 12px; }
+  .ha-figure { width: 290px !important; height: auto; max-width: none; }
+  .ha-figure img { width: 100%; height: auto; }
+  .ha-ring.r2 { width: 400px !important; }
+  .ha-ring.r1 { width: 320px !important; }
+  .ha-glow { width: 300px; }
+  /* About: avatar centred above the details instead of squeezed beside them */
+  .img-about .overlay > .row > [class*="col-"] { flex: 0 0 100%; max-width: 100%; }
+  .about-visual { margin: 0 auto 1.5rem; max-width: 240px; }
+  .about-info { padding: 0 10px; }
+  #about-section .about-img { display: block; }
+}
