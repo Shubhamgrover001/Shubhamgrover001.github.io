@@ -80,7 +80,7 @@
 /* Contact "Download Resume" box: the whole box (icon, title, text) opens the PDF */
 (function () {
   document.querySelectorAll('.contact-info [data-href]').forEach(function (box) {
-    function go() { window.open(box.getAttribute('data-href'), '_blank', 'noopener'); }
+    function go() { var h = box.getAttribute('data-href'); if (/^(tel|mailto):/i.test(h)) { window.location.href = h; } else { window.open(h, '_blank', 'noopener'); } }
     box.style.cursor = 'pointer';
     box.addEventListener('click', function (e) { if (e.target.closest('a')) return; go(); });
     box.addEventListener('keydown', function (e) { if (e.target === box && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); go(); } });
