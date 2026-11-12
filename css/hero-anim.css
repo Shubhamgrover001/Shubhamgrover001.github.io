@@ -95,3 +95,12 @@
 /* Keep hero (and its sound button) above the overlapping About section */
 #home-section { position: relative; z-index: 2; }
 #about-section { position: relative; z-index: 1; }
+
+/* Hero text column overlaps the video; let clicks reach the sound button beneath it */
+.hero .slider-text .one-forth { pointer-events: none; }
+.hero .slider-text .one-forth a, .hero .slider-text .one-forth button, .hero .slider-text .one-forth input { pointer-events: auto; }
+.hero .slider-item .overlay { pointer-events: none; }
+/* Row is above the z-index:-1 video column; make it transparent to clicks so the sound button receives them */
+.hero .slider-text { pointer-events: none; }
+.hero .slider-text .one-third { pointer-events: auto; }
+.hero .slider-item .container { pointer-events: none; }
