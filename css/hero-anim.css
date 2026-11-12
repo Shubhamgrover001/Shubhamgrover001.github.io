@@ -107,9 +107,10 @@
 
 /* Phone: avatar first, fully visible, text below */
 @media (max-width: 767px) {
-  #home-section .owl-carousel.home-slider .slider-item .slider-text { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 70px; height: auto !important; }
+  #home-section .owl-carousel.home-slider .slider-item .slider-text { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 58px; height: auto !important; }
   #home-section .owl-carousel.home-slider .slider-item .slider-text .one-third { order: -1 !important; width: 100%; height: auto !important; min-height: 0 !important; margin-top: 0; overflow: visible; display: flex; align-items: flex-start; justify-content: center; }
-  #home-section .hv-scene { width: min(58vw, 240px); height: auto !important; aspect-ratio: 720 / 864; flex: none; }
+  #home-section .hv-scene { width: min(100vw, 400px); height: auto !important; aspect-ratio: 1 / 1; flex: none; margin: -50px 0 -10px; }
+  #home-section .hv-scene .hv-video { object-fit: cover; object-position: 50% 100%; }
   #home-section .owl-carousel.home-slider .slider-item .slider-text .one-forth { order: 1 !important; width: 100%; height: auto !important; margin-top: 0; text-align: center; }
   #home-section .slider-text .one-forth .text { padding-bottom: 10px; }
   #home-section .slider-text .one-forth h1 { font-size: 32px; margin-top: 2px !important; margin-bottom: 8px !important; }
