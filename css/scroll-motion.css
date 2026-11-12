@@ -116,9 +116,7 @@ html, body { overflow-x: hidden; max-width: 100%; }
   .ha-figure img { -webkit-mask-image: none; mask-image: none; }
   .ha-figure::after { content: ''; position: absolute; left: -2%; right: -2%; bottom: -1px; height: 28%; background: linear-gradient(to bottom, rgba(0,0,0,0), #000 92%); pointer-events: none; }
   .owl-carousel.home-slider .slider-item .slider-text .one-third { height: 380px !important; overflow: hidden; }
-  /* the About photo repeats the hero avatar right above it: hide on phones */
-  .about-visual { display: none !important; }
-  .ftco-about .about-img { display: none; }
+  .about-visual { margin: 0 auto 1.25rem; }
 }
 @media (max-width: 991.98px) {
   /* hero must grow with its content (JS pins it to window height, which cut the avatar off) */

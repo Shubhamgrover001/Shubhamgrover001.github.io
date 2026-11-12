@@ -86,3 +86,30 @@
     box.addEventListener('keydown', function (e) { if (e.target === box && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); go(); } });
   });
 })();
+
+/* Hero video avatar: sound toggle, pause off-screen, respect reduced motion */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.hv-scene').forEach(function (scene) {
+    var v = scene.querySelector('video'), btn = scene.querySelector('.hv-sound');
+    if (!v) return;
+    v.muted = true;
+    if (reduce) { v.removeAttribute('autoplay'); v.pause(); }
+    function setBtn() {
+      if (!btn) return;
+      btn.setAttribute('aria-pressed', String(!v.muted));
+      btn.setAttribute('aria-label', v.muted ? 'Turn sound on' : 'Turn sound off');
+      btn.firstElementChild.innerHTML = v.muted ? '&#128263;' : '&#128266;';
+    }
+    if (btn) btn.addEventListener('click', function () {
+      v.muted = !v.muted;
+      if (!v.muted) { v.currentTime = 0; v.play().catch(function () {}); }
+      setBtn();
+    });
+    if (!reduce && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { v.play().catch(function () {}); } else { v.pause(); } });
+      }, { threshold: 0.15 }).observe(scene);
+    }
+  });
+})();
