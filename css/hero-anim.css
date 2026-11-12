@@ -82,3 +82,12 @@
 .about-visual .ap-img { display: block; width: 100%; height: auto; border-radius: 20px; border: 2px solid #ffbd39; box-shadow: 0 0 0 6px rgba(255,189,57,.12), 0 16px 40px rgba(255,189,57,.25); animation: haFloat 6s ease-in-out infinite; transition: box-shadow .3s ease, transform .3s ease; }
 .about-visual .ap-img:hover { box-shadow: 0 0 0 6px rgba(255,189,57,.25), 0 20px 50px rgba(255,189,57,.45); }
 @media (prefers-reduced-motion: reduce) { .about-visual .ap-img { animation: none; } }
+
+/* ---------- Background removed: avatar sits directly on the page ---------- */
+.hv-scene { background: transparent !important; box-shadow: none !important; border-radius: 0; }
+.hv-scene::after { display: none; }
+.hv-video { object-position: 50% 50%; }
+.about-visual { background: radial-gradient(ellipse at 50% 55%, rgba(255,189,57,.22), rgba(255,189,57,0) 68%); }
+.about-visual .ap-img { border: 0 !important; border-radius: 0 !important; box-shadow: none !important; filter: drop-shadow(0 0 14px rgba(255,189,57,.35)); -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent 100%); mask-image: linear-gradient(to bottom, #000 82%, transparent 100%); }
+.about-visual .ap-img:hover { filter: drop-shadow(0 0 20px rgba(255,189,57,.6)); }
+.hv-video { -webkit-mask-image: radial-gradient(ellipse 62% 66% at 50% 50%, #000 62%, transparent 100%); mask-image: radial-gradient(ellipse 62% 66% at 50% 50%, #000 62%, transparent 100%); }
