@@ -1,5 +1,5 @@
 /* Polish layer: refines spacing, cards, headings; keeps the dark + yellow theme */
-:root{--acc:#ffbd39;--card:#141414;--card2:#1a1a1a;--line:rgba(255,255,255,.08)}
+:root{--acc:#00ffff;--card:#141414;--card2:#1a1a1a;--line:rgba(255,255,255,.08)}
 html{scroll-behavior:smooth}
 ::selection{background:var(--acc);color:#000}
 body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
@@ -9,7 +9,7 @@ a:focus-visible,button:focus-visible,.proj-card:focus-visible,[data-href]:focus-
 /* Section headings: quieter ghost word, yellow accent bar */
 .heading-section h1.big{color:rgba(255,255,255,.045)!important;letter-spacing:2px}
 .heading-section h2{letter-spacing:-.3px;position:relative;padding-bottom:16px}
-.heading-section h2:after{content:"";position:absolute;left:0;bottom:0;width:54px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--acc),rgba(255,189,57,.15))}
+.heading-section h2:after{content:"";position:absolute;left:0;bottom:0;width:54px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--acc),rgba(0,255,255,.15))}
 .heading-section.text-center h2:after{left:50%;transform:translateX(-50%)}
 .heading-section.text-center p{margin-top:6px}
 
@@ -28,12 +28,12 @@ ul.about-info li:last-child{border-bottom:0}
 
 /* Cards: resume + projects */
 .resume-wrap,.proj-card{background:linear-gradient(160deg,var(--card2),var(--card))!important;border:1px solid var(--line)!important;border-radius:16px!important;position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s,box-shadow .35s}
-.resume-wrap:before,.proj-card:before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--acc),rgba(255,189,57,0));opacity:.85}
-.resume-wrap:hover,.proj-card:hover{transform:translateY(-6px);border-color:rgba(255,189,57,.55)!important;box-shadow:0 20px 44px rgba(0,0,0,.55),0 0 0 1px rgba(255,189,57,.12)}
+.resume-wrap:before,.proj-card:before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--acc),rgba(0,255,255,0));opacity:.85}
+.resume-wrap:hover,.proj-card:hover{transform:translateY(-6px);border-color:rgba(0,255,255,.55)!important;box-shadow:0 20px 44px rgba(0,0,0,.55),0 0 0 1px rgba(0,255,255,.12)}
 .proj-card{display:flex;flex-direction:column;width:100%;padding:28px 26px!important}
 .proj-card p{flex:1 1 auto}
 .proj-card .btn{align-self:flex-start;margin-top:18px}
-.proj-tag{display:inline-block;align-self:flex-start;background:rgba(255,189,57,.10);border:1px solid rgba(255,189,57,.28);color:var(--acc)!important;border-radius:999px;padding:3px 11px;font-size:10.5px!important;letter-spacing:1px;margin-bottom:14px}
+.proj-tag{display:inline-block;align-self:flex-start;background:rgba(0,255,255,.10);border:1px solid rgba(0,255,255,.28);color:var(--acc)!important;border-radius:999px;padding:3px 11px;font-size:10.5px!important;letter-spacing:1px;margin-bottom:14px}
 .proj-card h3.heading{font-size:21px;line-height:1.35;margin-bottom:12px}
 .proj-card h3.heading a{color:#fff}
 .proj-card:hover h3.heading a{color:var(--acc)}
@@ -41,14 +41,14 @@ ul.about-info li:last-child{border-bottom:0}
 
 /* Counters, contact, footer */
 #section-counter .counter-wrap,.ftco-counter .block-18{background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:16px;transition:transform .35s,border-color .35s}
-.ftco-counter .block-18:hover{transform:translateY(-4px);border-color:rgba(255,189,57,.5)}
+.ftco-counter .block-18:hover{transform:translateY(-4px);border-color:rgba(0,255,255,.5)}
 .contact-section .icon{transition:transform .35s,box-shadow .35s,background .35s}
-.contact-section .icon:hover{transform:translateY(-4px) scale(1.06);box-shadow:0 0 0 6px rgba(255,189,57,.12),0 12px 28px rgba(0,0,0,.5)}
+.contact-section .icon:hover{transform:translateY(-4px) scale(1.06);box-shadow:0 0 0 6px rgba(0,255,255,.12),0 12px 28px rgba(0,0,0,.5)}
 .ftco-footer{border-top:1px solid var(--line)}
 
 /* Buttons: smoother press feel */
-.btn.btn-primary{box-shadow:0 8px 22px rgba(255,189,57,.18);transition:transform .25s,box-shadow .25s,filter .25s}
-.btn.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(255,189,57,.32);filter:brightness(1.05)}
+.btn.btn-primary{box-shadow:0 8px 22px rgba(0,255,255,.18);transition:transform .25s,box-shadow .25s,filter .25s}
+.btn.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,255,255,.32);filter:brightness(1.05)}
 
 @media (max-width:767.98px){
  .img-about .overlay{padding:20px 16px}

@@ -6,7 +6,7 @@
   var ctx = canvas.getContext('2d');
   var section = canvas.parentElement;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var YELLOW = '255,189,57', BLUE = '120,170,255';
+  var YELLOW = '0,255,255', BLUE = '0,102,255';
   var GLYPHS = ['0', '1', 'AI', '{ }', '</>', 'PASS', '200', 'LLM', 'QA', 'SQL', 'ML', 'assert'];
 
   var W = 0, H = 0, dpr = 1, layers = [], edges = [], pulses = [], glyphs = [];
