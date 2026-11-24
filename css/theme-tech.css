@@ -123,9 +123,18 @@ ul.about-info li{border-bottom:1px solid var(--line)}
   .btn.btn-primary,.resume-wrap,.proj-card{transition:none}
 }
 
-/* Avatar video: framed card (the clip has its own black backdrop) */
-.hv-scene{background:#000!important;border-radius:20px!important;overflow:hidden;box-shadow:0 0 0 1px rgba(0,255,255,.35),0 24px 60px rgba(0,102,255,.35),0 0 40px rgba(0,255,255,.12)!important}
-.hv-scene::after{background:linear-gradient(to top,rgba(0,102,255,.18),transparent 30%)!important}
+/* Avatar video: feather the clip's black backdrop into the page instead of a hard slab */
+.hv-scene{background:transparent!important;border-radius:0!important;box-shadow:none!important}
+.hv-video{mix-blend-mode:lighten;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 30%,#000 70%,transparent 100%),linear-gradient(180deg,transparent 0,#000 16%,#000 84%,transparent 100%);
+  -webkit-mask-composite:source-in;
+          mask-image:linear-gradient(90deg,transparent 0,#000 30%,#000 70%,transparent 100%),linear-gradient(180deg,transparent 0,#000 16%,#000 84%,transparent 100%);
+          mask-composite:intersect}
+.hv-scene::after{display:none!important}
+.ha-figure::after{display:none!important}
+.hv-sound{z-index:6}
+.slider-text h1{font-size:clamp(2.1rem,4vw,3.5rem)!important;line-height:1.15}
+.slider-text{position:relative;z-index:2}
 
 /* Navbar once scrolled */
 .ftco-navbar-light.scrolled{background:rgba(22,22,22,.92)!important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);box-shadow:0 8px 30px rgba(0,0,0,.4)}
