@@ -94,6 +94,8 @@
     var v = scene.querySelector('video'), btn = scene.querySelector('.hv-sound');
     if (!v) return;
     v.muted = true;
+    var play = scene.querySelector('.hv-play');
+    if (play) play.addEventListener('click', function () { scene.classList.add('is-playing'); v.play().catch(function () {}); });
     if (reduce) { v.removeAttribute('autoplay'); v.pause(); }
     function setBtn() {
       if (!btn) return;
@@ -108,7 +110,7 @@
     });
     if (!reduce && 'IntersectionObserver' in window) {
       new IntersectionObserver(function (es) {
-        es.forEach(function (e) { if (e.isIntersecting) { v.play().catch(function () {}); } else { v.pause(); } });
+        es.forEach(function (e) { if (e.isIntersecting && scene.classList.contains('is-playing')) { v.play().catch(function () {}); } else { v.pause(); } });
       }, { threshold: 0.15 }).observe(scene);
     }
   });
